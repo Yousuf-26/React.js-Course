@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Hello from "./components/Hello";
 import Fruits from "./components/Fruits";
 import ConditionalCmp from "./components/ConditionalCmp";
@@ -6,6 +6,9 @@ import Message from "./components/Message";
 import Counter from "./components/Counter";
 import Form from "./components/Form";
 import UseStateJS from "./hooks/UseStateJS";
+import Timer from "./hooks/Timer";
+import UserContext from "./hooks/contxtJS";
+import Ref from "./hooks/ref";
 function App() {
   const [count, setCount] = useState(0);
   const seatNumbers = [15, 12, 13];
@@ -14,6 +17,8 @@ function App() {
     age: 35,
     occupation: "QA Engineer",
   };
+
+  const userValue = useContext(UserContext);
   return (
     <div className="App">
       {/*
@@ -24,9 +29,11 @@ function App() {
       <Message />
       <Counter /> 
         */}
-
       <Form />
       <UseStateJS />
+      {/*<Timer />*/}
+      user info {userValue}
+      <Ref />
     </div>
   );
 }
